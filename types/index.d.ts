@@ -19,20 +19,22 @@ export interface Option<
   format?: (input: INPUT_VALUE) => INPUT_VALUE;
 }
 
+export type Options = Record<string, AnyOption>;
+
 export type AnyOption =
   | Option<InputType.Number>
   | Option<InputType.Checkbox>
   | Option<InputType.Text>;
 
-export interface Result<T> {
+export interface Result<T extends InputValue<InputType>> {
   getValue: () => T;
   setValue: (newValue: T) => void;
 }
 
-export type Results<T extends Record<string, AnyOption>> = {
-  [P in keyof T]: Result<InputValue<T[P]["kind"]>>;
+export type Results<OPTIONS extends Options> = {
+  [P in keyof OPTIONS]: Result<InputValue<OPTIONS[P]["kind"]>>;
 };
 
-export function useForm<T extends Record<string, AnyOption>>(
-  options: T
-): Results<T>;
+export function useForm<OPTIONS extends Options>(
+  options: OPTIONS
+): Results<OPTIONS>;
