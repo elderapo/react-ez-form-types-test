@@ -33,6 +33,6 @@ export type Results<T extends Record<string, AnyOption>> = {
   [P in keyof T]: Result<InputValue<T[P]["kind"]>>;
 };
 
-export function someFunc<T extends Record<string, AnyOption>>(
+export function useForm<T extends Record<string, AnyOption>>(
   options: T
 ): Results<T>;

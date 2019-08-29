@@ -1,8 +1,8 @@
 const tmp = 123;
 
-// import { someFunc, InputType } from "lib";
+// import { useForm, InputType } from "lib";
 
-// const defaultValues = someFunc({
+// const defaultValues = useForm({
 //   a: {
 //     kind: InputType.Number,
 //     defaultValue: 3, // $ExpectType number
