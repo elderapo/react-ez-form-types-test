@@ -6,7 +6,7 @@
   "dependencies": {
     "@types/underscore": "^1.8.5",
     "dtslint": "^0.3.0",
-    "underscore": "^1.8.3"
+    "underscore": "^1.12.1"
   },
   "scripts": {
     "test": "dtslint types --onlyTestTsNext"
